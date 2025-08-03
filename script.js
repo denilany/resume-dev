@@ -150,4 +150,78 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // GitHub Projects Integration
+    async function fetchGitHubProjects() {
+        const username = 'denilany';
+        const selectedRepos = ['JS-framework', 'Task-Bit', 'social-app'];
+        
+        try {
+            const repos = await Promise.all(
+                selectedRepos.map(async (repoName) => {
+                    const response = await fetch(`https://api.github.com/repos/${username}/${repoName}`);
+                    if (response.ok) return response.json();
+                    return null;
+                })
+            );
+            
+            const validRepos = repos.filter(repo => repo !== null);
+            displayProjects(validRepos);
+        } catch (error) {
+            console.error('Error fetching GitHub projects:', error);
+            showProjectsError();
+        }
+    }
+
+    function displayProjects(repos) {
+        const container = document.getElementById('projects-container');
+        const loading = document.getElementById('projects-loading');
+        
+        loading.style.display = 'none';
+        container.style.display = 'grid';
+        
+        container.innerHTML = repos.map(repo => `
+            <div class="project-card flex flex-col gap-3 pb-3 p-4 rounded-lg border border-[#326767] bg-[#193333] hover:bg-[#234848] transition-all duration-300">
+                <div class="w-full bg-gradient-to-br from-[#11e3e3] to-[#326767] aspect-video rounded-xl flex items-center justify-center">
+                    <div class="text-[#112222] text-2xl font-bold">${repo.name.charAt(0).toUpperCase()}</div>
+                </div>
+                <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-2">
+                        <p class="text-white text-base font-medium leading-normal">${repo.name}</p>
+                        <a href="${repo.html_url}" target="_blank" class="text-[#11e3e3] hover:text-white transition-colors">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="text-[#92c9c9] text-sm font-normal leading-normal mb-3">
+                        ${repo.description || 'No description available'}
+                    </p>
+                    <div class="flex items-center gap-4 text-xs text-[#92c9c9]">
+                        ${repo.language ? `<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#11e3e3]"></span>${repo.language}</span>` : ''}
+                        <span class="flex items-center gap-1">
+                            <svg width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25z"/>
+                            </svg>
+                            ${repo.stargazers_count}
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <svg width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0z"/>
+                            </svg>
+                            ${repo.forks_count}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function showProjectsError() {
+        document.getElementById('projects-loading').style.display = 'none';
+        document.getElementById('projects-error').style.display = 'block';
+    }
+
+    // Load GitHub projects on page load
+    fetchGitHubProjects();
 });

@@ -160,37 +160,12 @@
               </div>
             </div>
             <h2 id="projects" class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Projects</h2>
-            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-              <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAcZldMwcVF_7WpRyu92lyibm3__IEA9CYzlcH2EJwc_TXnA9lWsYWD7lHMTLUFpL2rhoDqyeV6A5h6c1oMawa-bl00zudnbgdOgQCkkCm2DNKiYBhOHNjI1HWTBqeCYuM6nbd4q9Vb2dOfQY9RTinjd6GqpmSVA1QMiAZPuBXD9W7J3w_6N4sgePHxxYytOVZSZ3j4vwTZKr8awmTL1sl44rLBi6G3Bt4lRp7TLcZzrgqChGB6CvG1OHsbJsYnERSo8eU35ktGXno");'
-                ></div>
-                <div>
-                  <p class="text-white text-base font-medium leading-normal">Project Alpha</p>
-                  <p class="text-[#92c9c9] text-sm font-normal leading-normal">A web application for managing tasks and schedules.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDsNY7pOaQMOcoqKuMPClSRS7RslQJKqkeruiAStpsR7zhkjBQpnFzLJc8CO682-aJF6db_SCwLzNnAyhktNZAMbAU3mVFKrQE3UfYZWRaI3M27xTX7zIzmV7sBs2eWrjtAdh-x81xXHiJ9nR2V61ziz-gAeSkEHQ6hi-6wboD38CFiR7aiSNACq5Jhku9PMCQAJg8IiU0H78gDklsvUY0YOL0kKs6DaNBJPvddLIpx0rYlZ9eIsMy_MMvpr9OlsU-5Blp4JaC6VMA");'
-                ></div>
-                <div>
-                  <p class="text-white text-base font-medium leading-normal">Project Beta</p>
-                  <p class="text-[#92c9c9] text-sm font-normal leading-normal">An e-commerce platform with user authentication and payment integration.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCs7BDLYtQ7NE7G19CWwDdYZifoMVdqwHB2zNtuxkEugmOH0I5MZhRhD9uY3LXKZyV7ZaCoP0WI4LJuJVK0cCKtwHiltmQpcI_3usDKEcDW3cjvo3IZtIiQBWjB-rZFstl6pF0PSydJREL2JrgPBYT2gfqYbRB9uPB_Lct2xGKgFp_K-RuyGNI13vsNmFIgOEMyEruU-Kd22aMBjqbr1uvCZ0XcP52gZ4i_gUPHP5uub6wf8r6qxDH6BOE6vfUOCYtxiq1uUsIjvK0");'
-                ></div>
-                <div>
-                  <p class="text-white text-base font-medium leading-normal">Project Gamma</p>
-                  <p class="text-[#92c9c9] text-sm font-normal leading-normal">A mobile app for tracking fitness activities.</p>
-                </div>
-              </div>
+            <div id="projects-loading" class="flex justify-center items-center p-8">
+              <div class="text-[#92c9c9] text-base">Loading projects...</div>
+            </div>
+            <div id="projects-container" class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 p-4" style="display: none;"></div>
+            <div id="projects-error" class="text-center p-8" style="display: none;">
+              <p class="text-[#92c9c9] text-base">Unable to load projects. Please try again later.</p>
             </div>
             <h2 id="contact" class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Contact</h2>
             <form id="contact-form">
