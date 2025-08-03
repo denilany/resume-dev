@@ -1,0 +1,127 @@
+/* Portfolio Custom Styles */
+:root {
+  --bg-primary: #112222;
+  --bg-secondary: #193333;
+  --border-color: #326767;
+  --text-primary: #ffffff;
+  --text-secondary: #92c9c9;
+  --accent-color: #11e3e3;
+  --accent-text: #112222;
+  --border-secondary: #234848;
+}
+
+body {
+  font-family: 'Manrope', 'Noto Sans', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+  min-height: 480px;
+}
+
+/* Form Styles */
+.form-input {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.form-input:focus {
+  border-color: var(--border-color);
+  outline: none;
+  ring: 0;
+}
+
+.form-input::placeholder {
+  color: var(--text-secondary);
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--accent-text);
+}
+
+.btn-primary:hover {
+  background-color: #0dd4d4;
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+/* Card Styles */
+.skill-card {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(17, 227, 227, 0.1);
+}
+
+/* Project Cards */
+.project-card {
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Navigation */
+.nav-link {
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-color);
+}
+
+/* Social Links */
+.social-link {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-link:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #0dd4d4;
+  transform: translateY(-2px);
+}
+
+/* Form Validation Messages */
+.validation-message {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.validation-message.show {
+  opacity: 1;
+}
+
+/* Success Message */
+.success-message {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.success-message.show {
+  opacity: 1;
+}
