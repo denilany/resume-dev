@@ -32,7 +32,6 @@ body {
 .form-input:focus {
   border-color: var(--border-color);
   outline: none;
-  ring: 0;
 }
 
 .form-input::placeholder {
