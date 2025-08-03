@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Theme toggle
     const themeToggle = document.getElementById('theme-toggle');
+    
+    // Update footer year
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
 
     // Form validation
     function validateName() {
