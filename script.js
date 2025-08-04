@@ -224,4 +224,79 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Load GitHub projects on page load
     fetchGitHubProjects();
+
+    // Resume functionality
+    const downloadResumeBtn = document.getElementById('download-resume-btn');
+    const printResumeBtn = document.getElementById('print-resume-btn');
+    const shareResumeBtn = document.getElementById('share-resume-btn');
+
+    // Download resume functionality
+    if (downloadResumeBtn) {
+        downloadResumeBtn.addEventListener('click', function() {
+            // Open the resume HTML file in a new tab for download/print
+            window.open('resume.html', '_blank');
+
+            // Show download feedback
+            const originalText = this.innerHTML;
+            this.innerHTML = `
+                <div class="text-[#112222]" data-icon="Check" data-size="20px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="m229.66,77.66-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
+                    </svg>
+                </div>
+                <span class="truncate">Opening Resume!</span>
+            `;
+
+            setTimeout(() => {
+                this.innerHTML = originalText;
+            }, 2000);
+        });
+    }
+
+    // Print resume functionality
+    if (printResumeBtn) {
+        printResumeBtn.addEventListener('click', function() {
+            // Open the resume HTML file for printing
+            const printWindow = window.open('resume.html', '_blank');
+            printWindow.onload = function() {
+                printWindow.print();
+            };
+        });
+    }
+
+    // Share resume functionality
+    if (shareResumeBtn) {
+        shareResumeBtn.addEventListener('click', function() {
+            const resumeUrl = window.location.href + '#resume';
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Denil Anyonyi - Resume',
+                    text: 'Check out my resume and portfolio',
+                    url: resumeUrl
+                }).catch(console.error);
+            } else {
+                // Fallback: copy to clipboard
+                navigator.clipboard.writeText(resumeUrl).then(() => {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = `
+                        <div data-icon="Check" data-size="16px" data-weight="regular">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="currentColor" viewBox="0 0 256 256">
+                                <path d="m229.66,77.66-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
+                            </svg>
+                        </div>
+                        <span>Link Copied!</span>
+                    `;
+
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                    }, 2000);
+                }).catch(() => {
+                    alert('Resume link: ' + resumeUrl);
+                });
+            }
+        });
+    }
+
+
 });

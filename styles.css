@@ -124,3 +124,65 @@ html {
 .success-message.show {
   opacity: 1;
 }
+
+/* Resume Section */
+.resume-preview-container {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  max-height: 600px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) var(--bg-secondary);
+}
+
+.resume-preview-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.resume-preview-container::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.resume-preview-container::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.resume-preview-container::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+.resume-content h1 {
+  color: var(--text-primary);
+}
+
+.resume-content h2 {
+  color: var(--text-primary);
+  border-bottom-color: var(--border-color);
+}
+
+.resume-content h3 {
+  color: var(--text-primary);
+}
+
+/* Resume Download Section */
+.resume-download-card {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resume-download-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(17, 227, 227, 0.1);
+}
+
+/* Quick Actions Buttons */
+.quick-action-btn {
+  transition: all 0.2s ease;
+}
+
+.quick-action-btn:hover {
+  background-color: var(--border-secondary);
+  color: var(--text-primary);
+}

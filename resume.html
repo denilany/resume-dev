@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denil Anyonyi - Resume</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #11e3e3;
+            padding-bottom: 20px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #112222;
+            font-weight: bold;
+        }
+        
+        .header .title {
+            font-size: 1.3em;
+            color: #11e3e3;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        
+        .contact-info span {
+            color: #666;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section h2 {
+            color: #112222;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #11e3e3;
+            padding-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .section h3 {
+            color: #112222;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .job-title {
+            color: #11e3e3;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .skill-item {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #11e3e3;
+        }
+        
+        .skill-item strong {
+            color: #112222;
+        }
+        
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin: 8px 0;
+            color: #555;
+        }
+        
+        .experience-item {
+            margin-bottom: 25px;
+        }
+        
+        .date-range {
+            color: #666;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 20px;
+                font-size: 12px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section h2 {
+                font-size: 1.2em;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Denil Anyonyi</h1>
+        <div class="title">Software Engineer</div>
+        <div class="contact-info">
+            <span>📧 denilanyonyi@gmail.com</span>
+            <span>📱 +254 791 572 335</span>
+            <span>🌐 linkedin.com/in/denil-anyonyi</span>
+            <span>💻 github.com/denilany</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Professional Summary</h2>
+        <p>Full-stack software developer with 2+ years of experience building web applications using Go, JavaScript, and Rust. Experienced in agile development environments with a focus on data privacy and security. Passionate about creating efficient, scalable solutions for business needs.</p>
+    </div>
+
+    <div class="section">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <strong>Languages:</strong> Go, JavaScript, Rust, Python
+            </div>
+            <div class="skill-item">
+                <strong>Frontend:</strong> React, Next.js, HTML, CSS
+            </div>
+            <div class="skill-item">
+                <strong>Backend:</strong> Go, Django, Node.js, RESTful APIs
+            </div>
+            <div class="skill-item">
+                <strong>Databases:</strong> PostgreSQL, MongoDB, SQLite
+            </div>
+            <div class="skill-item">
+                <strong>Tools:</strong> Git, Docker, Linux, Agile/Scrum
+            </div>
+            <div class="skill-item">
+                <strong>Cloud:</strong> AWS
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Experience</h2>
+        <div class="experience-item">
+            <h3>Software Developer</h3>
+            <div class="job-title">Zone 01 Kisumu</div>
+            <div class="date-range">2024 - Present</div>
+            <ul>
+                <li>Collaborate with development teams to deliver market-ready applications tailored to client needs</li>
+                <li>Built a logistics coordination tool that helps small businesses manage deliveries, track inventory, and streamline operations through a clean and efficient dashboard</li>
+                <li>Contributed to a developer hiring platform, helping a local company better showcase and connect vetted software talent with potential clients</li>
+                <li>Participate in sprint planning, daily stand-ups, and iterative delivery cycles in agile team environments</li>
+                <li>Focus on data privacy and security, ensuring user data remains secure and trustworthy</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Education</h2>
+        <div class="experience-item">
+            <h3>Software Development Program</h3>
+            <div class="job-title">Zone 01 Kisumu</div>
+            <div class="date-range">2024</div>
+            <p>Comprehensive software development program focusing on modern web technologies, algorithms, and software engineering best practices.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Key Projects</h2>
+        <ul>
+            <li><strong>Logistics Coordination Tool:</strong> Full-stack application for small business delivery management with inventory tracking and operational dashboard</li>
+            <li><strong>Developer Hiring Platform:</strong> Platform connecting vetted software talent with potential clients, featuring portfolio showcases and client matching</li>
+            <li><strong>Web Applications:</strong> Various client projects using modern JavaScript frameworks and backend technologies</li>
+        </ul>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; color: #666; font-size: 0.8em;">
+        <p>Generated on: <span id="generation-date"></span></p>
+    </div>
+
+    <script>
+        document.getElementById('generation-date').textContent = new Date().toLocaleDateString();
+    </script>
+</body>
+</html>
