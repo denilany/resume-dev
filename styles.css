@@ -305,6 +305,8 @@ html {
   .hero-section {
     min-height: 400px;
     padding: 2rem 1rem;
+    border-radius: 0.75rem !important; /* Add rounded corners for small screens */
+    margin-top: 1rem !important; /* Add margin between navbar and hero section */
   }
 
   .hero-section h1 {
@@ -395,6 +397,8 @@ html {
   .hero-section {
     min-height: 450px;
     padding: 2.5rem 1.5rem;
+    border-radius: 0.75rem !important; /* Add rounded corners for medium screens */
+    margin-top: 1.25rem !important; /* Add margin between navbar and hero section */
   }
 
   .hero-section h1 {
