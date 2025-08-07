@@ -53,9 +53,30 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuBtn.addEventListener('click', toggleMobileMenu);
     }
 
-    // Close menu when clicking on navigation links
+    // Close menu when clicking on navigation links and handle smooth scrolling
     mobileNavLinks.forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
+        link.addEventListener('click', function(event) {
+            const targetId = this.getAttribute('href');
+
+            // Close the mobile menu first
+            closeMobileMenu();
+
+            // Handle smooth scrolling to target section
+            if (targetId && targetId.startsWith('#')) {
+                event.preventDefault();
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Small delay to allow menu to close first
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 300);
+                }
+            }
+        });
     });
 
     // Close menu when clicking outside
@@ -80,6 +101,26 @@ document.addEventListener('DOMContentLoaded', function() {
         if (window.innerWidth > 480) {
             closeMobileMenu();
         }
+    });
+
+    // Add smooth scrolling to desktop navigation links as well
+    const desktopNavLinks = document.querySelectorAll('.desktop-nav .nav-link');
+    desktopNavLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            const targetId = this.getAttribute('href');
+
+            if (targetId && targetId.startsWith('#')) {
+                event.preventDefault();
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
     });
 
     // Form validation
