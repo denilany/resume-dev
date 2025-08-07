@@ -177,6 +177,12 @@ html {
   box-shadow: 0 2px 8px rgba(17, 227, 227, 0.1);
 }
 
+/* Resume Section Titles Alignment */
+/* Target all h3 elements in the resume section */
+#resume + .flex h3 {
+  text-align: left !important;
+}
+
 /* Quick Actions Buttons */
 .quick-action-btn {
   transition: all 0.2s ease;
@@ -270,7 +276,7 @@ html {
 /* ===== RESPONSIVE DESIGN FOR SPECIFIC SCREEN SIZES ===== */
 
 /* Screen size: 393x852 (Small mobile - iPhone 14 Pro size) */
-@media screen and (max-width: 393px) and (max-height: 852px) {
+@media screen and (max-width: 393px) {
   /* Layout adjustments */
   .px-40 {
     padding-left: 1rem !important;
@@ -363,12 +369,20 @@ html {
 
   /* Footer */
   .flex.flex-wrap.justify-center.gap-4 {
-    gap: 2rem;
+    gap: 1rem !important; /* Smaller gap to keep links horizontal */
+    flex-direction: row !important; /* Ensure horizontal layout */
+    flex-wrap: wrap !important; /* Allow wrapping if needed */
+  }
+
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
 /* Screen size: 480x1040 (Medium mobile - larger phone size) */
-@media screen and (max-width: 480px) and (max-height: 1040px) {
+@media screen and (max-width: 480px) {
   /* Layout adjustments */
   .px-40 {
     padding-left: 1.5rem !important;

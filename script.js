@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-[#92c9c9] text-sm font-normal leading-normal mb-3">
                         ${repo.description || 'No description available'}
                     </p>
-                    <div class="flex items-center gap-4 text-xs text-[#92c9c9]">
+                    <div class="flex items-center gap-2 text-xs text-[#92c9c9]">
                         ${repo.language ? `<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#11e3e3]"></span>${repo.language}</span>` : ''}
                         <span class="flex items-center gap-1">
                             <svg width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
