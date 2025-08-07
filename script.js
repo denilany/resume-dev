@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
     // Form validation and submission
     const contactForm = document.getElementById('contact-form');
     const nameInput = document.getElementById('name-input');
@@ -14,12 +19,68 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Back to top functionality
     const backToTopBtn = document.getElementById('back-to-top');
-    
+
     // Theme toggle
     const themeToggle = document.getElementById('theme-toggle');
-    
+
     // Update footer year
     document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle functionality
+    function toggleMobileMenu() {
+        const isActive = mobileMenu.classList.contains('active');
+
+        if (isActive) {
+            mobileMenu.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+            document.body.style.overflow = '';
+        } else {
+            mobileMenu.classList.add('active');
+            mobileMenuBtn.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    // Close mobile menu when clicking on a link
+    function closeMobileMenu() {
+        mobileMenu.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Event listeners for mobile menu
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+
+    // Close menu when clicking on navigation links
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideMenu = mobileMenu.contains(event.target);
+        const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
+
+        if (!isClickInsideMenu && !isClickOnMenuBtn && mobileMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+
+    // Handle window resize - close mobile menu if screen becomes large
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 480) {
+            closeMobileMenu();
+        }
+    });
 
     // Form validation
     function validateName() {

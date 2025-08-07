@@ -186,3 +186,370 @@ html {
   background-color: var(--border-secondary);
   color: var(--text-primary);
 }
+
+/* ===== HAMBURGER MENU STYLES ===== */
+
+/* Hide mobile menu by default */
+.mobile-nav-container {
+  display: none;
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-secondary);
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.mobile-nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.mobile-nav-link:hover {
+  color: var(--accent-color);
+  background-color: var(--bg-secondary);
+  border-left-color: var(--accent-color);
+  transform: translateX(0.25rem);
+}
+
+.mobile-profile {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-secondary);
+  text-align: center;
+}
+
+.mobile-menu-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+  background-color: var(--bg-secondary);
+}
+
+.mobile-menu-btn.active .hamburger-icon {
+  display: none;
+}
+
+.mobile-menu-btn.active .close-icon {
+  display: block;
+}
+
+/* ===== RESPONSIVE DESIGN FOR SPECIFIC SCREEN SIZES ===== */
+
+/* Screen size: 393x852 (Small mobile - iPhone 14 Pro size) */
+@media screen and (max-width: 393px) and (max-height: 852px) {
+  /* Layout adjustments */
+  .px-40 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .px-10 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  /* Header adjustments - Show mobile menu */
+  header {
+    padding: 0.75rem;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-nav-container {
+    display: block !important;
+  }
+
+  /* Navigation links */
+  .nav-link {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  /* Hero section */
+  .hero-section {
+    min-height: 400px;
+    padding: 2rem 1rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+
+  .hero-section h2 {
+    font-size: 0.875rem !important;
+    padding: 0 0.5rem;
+  }
+
+  /* About section */
+  .flex.gap-4 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .min-h-32.w-32 {
+    min-height: 6rem;
+    width: 6rem;
+  }
+
+  /* Skills grid */
+  .grid.grid-cols-\[repeat\(auto-fit\,minmax\(158px\,1fr\)\)\] {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  /* Resume section */
+  .flex.flex-col.gap-4.\@\[520px\]\:flex-row {
+    flex-direction: column;
+  }
+
+  .resume-preview-container {
+    max-height: 300px;
+    font-size: 0.75rem;
+  }
+
+  /* Contact form */
+  .max-w-\[480px\] {
+    max-width: 100%;
+  }
+
+  .form-input {
+    height: 3rem;
+    font-size: 0.875rem;
+  }
+
+  textarea.form-input {
+    min-height: 8rem;
+  }
+
+  /* Footer */
+  .flex.flex-wrap.justify-center.gap-4 {
+    gap: 2rem;
+  }
+}
+
+/* Screen size: 480x1040 (Medium mobile - larger phone size) */
+@media screen and (max-width: 480px) and (max-height: 1040px) {
+  /* Layout adjustments */
+  .px-40 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  .px-10 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Header adjustments - Show mobile menu */
+  header {
+    padding: 1rem;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-nav-container {
+    display: block !important;
+  }
+
+  /* Hero section */
+  .hero-section {
+    min-height: 450px;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.1;
+  }
+
+  .hero-section h2 {
+    font-size: 1rem !important;
+    padding: 0 1rem;
+  }
+
+  /* About section */
+  .flex.w-full.flex-col.gap-4.\@\[520px\]\:flex-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .min-h-32.w-32 {
+    min-height: 7rem;
+    width: 7rem;
+  }
+
+  /* Skills grid */
+  .grid.grid-cols-\[repeat\(auto-fit\,minmax\(158px\,1fr\)\)\] {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  /* Resume section */
+  .flex.flex-col.gap-4.\@\[520px\]\:flex-row.\@\[520px\]\:items-start {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .resume-preview-container {
+    max-height: 400px;
+    font-size: 0.875rem;
+  }
+
+  /* Projects grid */
+  .grid.grid-cols-\[repeat\(auto-fit\,minmax\(300px\,1fr\)\)\] {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Contact form */
+  .max-w-\[480px\] {
+    max-width: 100%;
+  }
+
+  .form-input {
+    height: 3.5rem;
+    padding: 1rem;
+  }
+
+  textarea.form-input {
+    min-height: 9rem;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    height: 3rem;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* Back to top button */
+  .back-to-top {
+    height: 3.5rem;
+    padding: 0 1.5rem;
+  }
+}
+
+/* Additional responsive utilities for both screen sizes */
+@media screen and (max-width: 480px) {
+  /* Show mobile navigation */
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-nav-container {
+    display: block !important;
+  }
+
+  /* Hide or adjust elements that don't fit well on small screens */
+  .size-10 {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  /* Ensure text doesn't overflow */
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Adjust spacing for better mobile experience */
+  .gap-8 {
+    gap: 1rem;
+  }
+
+  .gap-6 {
+    gap: 1rem;
+  }
+
+  .gap-4 {
+    gap: 0.75rem;
+  }
+
+  /* Improve touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Adjust font sizes for readability */
+  .text-4xl {
+    font-size: 2rem !important;
+  }
+
+  .text-5xl {
+    font-size: 2.5rem !important;
+  }
+
+  .text-\[22px\] {
+    font-size: 1.25rem !important;
+  }
+
+  /* Mobile menu specific adjustments */
+  .mobile-menu {
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+
+  /* Prevent body scroll when menu is open */
+  body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+}
+
+/* Ensure desktop navigation is visible on larger screens */
+@media screen and (min-width: 481px) {
+  .desktop-nav {
+    display: flex !important;
+  }
+
+  .mobile-nav-container {
+    display: none !important;
+  }
+
+  .mobile-menu {
+    display: none !important;
+  }
+}
