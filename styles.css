@@ -10,10 +10,18 @@
   --border-secondary: #234848;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Manrope', 'Noto Sans', sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Hero Section */
@@ -569,5 +577,39 @@ html {
 
   .mobile-menu {
     display: none !important;
+  }
+}
+
+/* Additional mobile optimizations */
+@media screen and (max-width: 480px) {
+  /* Improve touch targets for mobile */
+  .mobile-nav-link {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-menu-btn {
+    min-height: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Ensure proper text rendering on mobile */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Fix for iOS Safari viewport issues */
+  .layout-container {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
   }
 }
