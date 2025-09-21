@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="styles.css">
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   </head>
   <body>
     <div class="relative flex size-full min-h-screen flex-col bg-[#112222] dark group/design-root overflow-x-hidden" style='font-family: Manrope, "Noto Sans", sans-serif;'>
@@ -206,62 +208,117 @@
             <div class="flex flex-col gap-6 p-4">
               <div class="flex flex-col gap-4 @container">
                 <div class="flex flex-col gap-4 @[520px]:flex-row @[520px]:items-start @[520px]:gap-6">
-                  <!-- Resume Preview Section -->
+                  <!-- Work Experience Section -->
                   <div class="flex-1">
                     <div class="flex flex-col gap-3">
-                      <h3 class="text-white text-lg font-bold leading-tight">Resume Preview</h3>
-                      <div class="resume-preview-container bg-[#193333] border border-[#326767] rounded-lg p-6 min-h-[400px]">
-                        <div class="resume-content text-[#92c9c9] text-sm leading-relaxed">
-                          <div class="text-center mb-6">
-                            <h1 class="text-white text-2xl font-bold mb-2">Denil Anyonyi</h1>
-                            <p class="text-[#11e3e3] text-lg font-medium mb-2">Software Engineer</p>
-                            <div class="flex flex-wrap justify-center gap-4 text-sm">
-                              <span>📧 denilanyonyi1@gmail.com</span>
-                              <span>📱 +254 791 572 335</span>
-                              <span>🌐 LinkedIn: /in/denil-anyonyi</span>
-                              <span>💻 GitHub: /denilany</span>
+                      <h3 class="text-white text-lg font-bold leading-tight">Work Experience</h3>
+                      <div class="work-experience-container bg-[#193333] border border-[#326767] rounded-lg p-6">
+
+                        <!-- Current Position -->
+                        <div class="experience-item mb-8 pb-6 border-b border-[#234848] last:border-b-0 last:mb-0 last:pb-0">
+                          <div class="flex flex-col gap-3">
+                            <div class="flex flex-col @[600px]:flex-row @[600px]:items-center @[600px]:justify-between gap-2">
+                              <h4 class="text-white text-lg font-bold">Software Developer</h4>
+                              <span class="text-[#11e3e3] text-sm font-medium bg-[#112222] px-3 py-1 rounded-full w-fit">2024 - Present</span>
                             </div>
-                          </div>
-
-                          <div class="mb-6">
-                            <h2 class="text-white text-lg font-bold mb-3 border-b border-[#326767] pb-1">Professional Summary</h2>
-                            <p>Full-stack software developer with 2+ years of experience building web applications using Go, JavaScript, and Rust. Experienced in agile development environments with a focus on data privacy and security. Passionate about creating efficient, scalable solutions for business needs.</p>
-                          </div>
-
-                          <div class="mb-6">
-                            <h2 class="text-white text-lg font-bold mb-3 border-b border-[#326767] pb-1">Technical Skills</h2>
-                            <div class="grid grid-cols-1 @[400px]:grid-cols-2 gap-2">
-                              <div><strong>Languages:</strong> Go, JavaScript, Rust, Python</div>
-                              <div><strong>Frontend:</strong> React, Next.js, HTML, CSS</div>
-                              <div><strong>Backend:</strong> Go, Django, Node.js, RESTful APIs</div>
-                              <div><strong>Databases:</strong> PostgreSQL, MongoDB, SQLite</div>
-                              <div><strong>Tools:</strong> Git, Docker, Linux, Agile/Scrum</div>
-                              <div><strong>Cloud:</strong> AWS, Digital Ocean</div>
+                            <div class="flex items-center gap-2 mb-3">
+                              <div class="text-[#11e3e3]" data-icon="Buildings" data-size="16px" data-weight="regular">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="currentColor" viewBox="0 0 256 256">
+                                  <path d="M240,208H224V96a16,16,0,0,0-16-16H144V32a16,16,0,0,0-16-16H48A16,16,0,0,0,32,32V208H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM208,96V208H144V96ZM48,32h80V208H48Z"></path>
+                                </svg>
+                              </div>
+                              <span class="text-[#92c9c9] font-medium">Zone 01 Kisumu</span>
+                              <span class="text-[#92c9c9]">•</span>
+                              <span class="text-[#92c9c9]">Kisumu, Kenya</span>
                             </div>
-                          </div>
+                            <div class="space-y-3">
+                              <div class="flex items-start gap-3">
+                                <div class="text-[#11e3e3] mt-1" data-icon="CheckCircle" data-size="16px" data-weight="regular">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path>
+                                  </svg>
+                                </div>
+                                <p class="text-[#92c9c9] text-sm leading-relaxed">Collaborate with cross-functional development teams to design, develop, and deliver market-ready web applications using modern technologies and agile methodologies</p>
+                              </div>
 
-                          <div class="mb-6">
-                            <h2 class="text-white text-lg font-bold mb-3 border-b border-[#326767] pb-1">Experience</h2>
-                            <div class="mb-4">
-                              <h3 class="text-white font-semibold">Software Developer</h3>
-                              <p class="text-[#11e3e3] text-sm">Zone 01 Kisumu • 2024 - Present</p>
-                              <ul class="list-disc list-inside mt-2 space-y-1">
-                                <li>Collaborate with development teams to deliver market-ready applications</li>
-                                <li>Built logistics coordination tool for small businesses</li>
-                                <li>Contributed to developer hiring platform connecting talent with clients</li>
-                                <li>Participate in sprint planning, daily stand-ups, and iterative delivery</li>
-                              </ul>
+                              <div class="flex items-start gap-3">
+                                <div class="text-[#11e3e3] mt-1" data-icon="CheckCircle" data-size="16px" data-weight="regular">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path>
+                                  </svg>
+                                </div>
+                                <p class="text-[#92c9c9] text-sm leading-relaxed">Contributed to the development of a developer hiring platform that connects vetted software talent with potential clients, improving the recruitment process for local companies</p>
+                              </div>
+                              <div class="flex items-start gap-3">
+                                <div class="text-[#11e3e3] mt-1" data-icon="CheckCircle" data-size="16px" data-weight="regular">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path>
+                                  </svg>
+                                </div>
+                                <p class="text-[#92c9c9] text-sm leading-relaxed">Actively participate in sprint planning, daily stand-ups, code reviews, and iterative delivery cycles, ensuring high-quality code and timely project completion</p>
+                              </div>
+                              <div class="flex items-start gap-3">
+                                <div class="text-[#11e3e3] mt-1" data-icon="CheckCircle" data-size="16px" data-weight="regular">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path>
+                                  </svg>
+                                </div>
+                                <p class="text-[#92c9c9] text-sm leading-relaxed">Implement robust data privacy and security measures in all applications, ensuring user data protection and compliance with industry standards</p>
+                              </div>
                             </div>
-                          </div>
-
-                          <div class="mb-4">
-                            <h2 class="text-white text-lg font-bold mb-3 border-b border-[#326767] pb-1">Education</h2>
-                            <div>
-                              <h3 class="text-white font-semibold">Software Development Program</h3>
-                              <p class="text-[#11e3e3] text-sm">Zone 01 Kisumu • 2024</p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                              <span class="bg-[#234848] text-[#11e3e3] text-xs px-2 py-1 rounded">Go</span>
+                              <span class="bg-[#234848] text-[#11e3e3] text-xs px-2 py-1 rounded">JavaScript</span>
+                              <span class="bg-[#234848] text-[#11e3e3] text-xs px-2 py-1 rounded">React</span>
+                              <span class="bg-[#234848] text-[#11e3e3] text-xs px-2 py-1 rounded">PostgreSQL</span>
+                              <span class="bg-[#234848] text-[#11e3e3] text-xs px-2 py-1 rounded">Agile/Scrum</span>
                             </div>
                           </div>
                         </div>
+
+                        <!-- Education/Training -->
+                        <div class="experience-item">
+                          <div class="flex flex-col gap-3">
+                            <div class="flex flex-col @[600px]:flex-row @[600px]:items-center @[600px]:justify-between gap-2">
+                              <h4 class="text-white text-lg font-bold">Software Development Program</h4>
+                              <span class="text-[#11e3e3] text-sm font-medium bg-[#112222] px-3 py-1 rounded-full w-fit">2024</span>
+                            </div>
+                            <div class="flex items-center gap-2 mb-3">
+                              <div class="text-[#11e3e3]" data-icon="GraduationCap" data-size="16px" data-weight="regular">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="currentColor" viewBox="0 0 256 256">
+                                  <path d="M251.76,88.94l-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216s78.84-24.47,91.94-39.06A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12ZM128,200c-43.27,0-68.72-21.14-80-33.71V126.4l76.24,40.66a8,8,0,0,0,7.52,0L208,126.4v39.89C196.72,178.86,171.27,200,128,200Zm0-33.87L57.05,96,128,25.87,198.95,96Z"></path>
+                                </svg>
+                              </div>
+                              <span class="text-[#92c9c9] font-medium">Zone 01 Kisumu</span>
+                              <span class="text-[#92c9c9]">•</span>
+                              <span class="text-[#92c9c9]">Kisumu, Kenya</span>
+                            </div>
+                            <div class="space-y-3">
+                              <div class="flex items-start gap-3">
+                                <div class="text-[#11e3e3] mt-1" data-icon="CheckCircle" data-size="16px" data-weight="regular">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path>
+                                  </svg>
+                                </div>
+                                <p class="text-[#92c9c9] text-sm leading-relaxed">Completed intensive software development program focusing on modern web technologies, algorithms, and software engineering best practices</p>
+                              </div>
+                              <div class="flex items-start gap-3">
+                                <div class="text-[#11e3e3] mt-1" data-icon="CheckCircle" data-size="16px" data-weight="regular">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path>
+                                  </svg>
+                                </div>
+                                <p class="text-[#92c9c9] text-sm leading-relaxed">Gained hands-on experience in full-stack development, database design, and collaborative software development methodologies</p>
+                              </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                              <span class="bg-[#234848] text-[#11e3e3] text-xs px-2 py-1 rounded">Full-Stack Development</span>
+                              <span class="bg-[#234848] text-[#11e3e3] text-xs px-2 py-1 rounded">Algorithms</span>
+                              <span class="bg-[#234848] text-[#11e3e3] text-xs px-2 py-1 rounded">Software Engineering</span>
+                            </div>
+                          </div>
+                        </div>
+
                       </div>
                     </div>
                   </div>

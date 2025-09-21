@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS
+    emailjs.init("QsmvQ9pwcmkBFfbWF");
+
     // Mobile menu functionality
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -160,34 +163,67 @@ document.addEventListener('DOMContentLoaded', function() {
     emailInput.addEventListener('blur', validateEmail);
     messageInput.addEventListener('blur', validateMessage);
 
-    // Form submission
+    // Form submission with EmailJS
     submitBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        
+
         const isNameValid = validateName();
         const isEmailValid = validateEmail();
         const isMessageValid = validateMessage();
 
         if (isNameValid && isEmailValid && isMessageValid) {
-            // Simulate form submission
+            // Show loading state
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                successMessage.classList.add('show');
-                submitBtn.textContent = 'Submit';
-                submitBtn.disabled = false;
-                
-                // Reset form
-                nameInput.value = '';
-                emailInput.value = '';
-                messageInput.value = '';
-                
-                // Hide success message after 3 seconds
-                setTimeout(() => {
-                    successMessage.classList.remove('show');
-                }, 3000);
-            }, 1000);
+
+            // Prepare email parameters
+            const templateParams = {
+                from_name: nameInput.value.trim(),
+                from_email: emailInput.value.trim(),
+                message: messageInput.value.trim(),
+                to_email: 'denilanyonyi1@gmail.com',
+                reply_to: emailInput.value.trim(),
+                time: new Date().toLocaleString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    timeZoneName: 'short'
+                })
+            };
+
+            // Send email using EmailJS
+            emailjs.send('service_scilzwn', 'template_t71zwuk', templateParams)
+                .then(function(response) {
+                    console.log('Email sent successfully:', response);
+
+                    // Show success message
+                    successMessage.classList.add('show');
+                    submitBtn.textContent = 'Submit';
+                    submitBtn.disabled = false;
+
+                    // Reset form
+                    nameInput.value = '';
+                    emailInput.value = '';
+                    messageInput.value = '';
+
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.classList.remove('show');
+                    }, 5000);
+
+                }, function(error) {
+                    console.error('Email sending failed:', error);
+
+                    // Show error message
+                    alert('Sorry, there was an error sending your message. Please try again or contact me directly at denilanyonyi1@gmail.com');
+
+                    // Reset button
+                    submitBtn.textContent = 'Submit';
+                    submitBtn.disabled = false;
+                });
         }
     });
 
